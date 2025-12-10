@@ -669,21 +669,22 @@ function goFirstPage() {
 function getGenZMessage(score, isWinner, isStrictWinner) {
   if (gameStyle === "language-general") return "";
 
-  if (playerCount === 1 && score < 15) {
-    return "You're probably the parent of a Gen Z! 👵😂";
-  }
-
   if (isWinner) {
     if (isStrictWinner && score < 15) {
-      return "Among all your rivals, you're the most Gen Z 😌🔥";
+      if (playerCount === 1) {
+        return "You're probably the parent of a Gen Z! 👵";
+      }
+      return "Among all your rivals, you're the most Gen Z 😌";
     }
-    if (score >= 15 && score <= 21) return "You low-key passed! 😏✅";
+
+    if (score >= 15 && score <= 21) return "You low-key passed! 😏";
   }
 
-  if (score < 15) return "You're probably the parent of a Gen Z! 👵😂";
-  if (score > 24) return "Certified Gen Z 😎✅";
+  if (score < 15) return "You're probably the parent of a Gen Z! 👵";
+  if (score > 24) return "Certified Gen Z 😎";
   return "";
 }
+
 
 
 let confettiStarted = false;
