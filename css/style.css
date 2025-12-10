@@ -1,0 +1,9 @@
+button:disabled {
+  opacity: 0.9;
+}
+
+body {
+  font-family: sans-serif !important;
+}
+
+html { font-size: 15px; }
